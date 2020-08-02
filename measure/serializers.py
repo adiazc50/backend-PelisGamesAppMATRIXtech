@@ -7,13 +7,13 @@ class ClienteSerializer(serializers.ModelSerializer):
     class MetaCliente:
         model = Cliente
         fields = ('idCliente', 'nombreCliente', 'direccion','telefono','celular','email')
-
+   
 class JuegosSerializer(serializers.ModelSerializer):
     class MetaJuegos:
         model = Juegos
-        fields = ('idCliente', 'nombreCliente', 'direccion','telefono','celular','email')
+        fields = ('titulo', 'nombreJuego', 'ano','protagonistas','director','productor','plataforma','precio')
 
 class PrestamoSerializer(serializers.ModelSerializer):
     class MetaPrestamo:
         model = Prestamo
-        fields = ('idCliente', 'nombreCliente', 'direccion','telefono','celular','email')
+        fields = ('idPrestamos', 'nombreCliente', 'idCliente','nombreJuego','fechaPrestamo','fechaVence','Correo')
