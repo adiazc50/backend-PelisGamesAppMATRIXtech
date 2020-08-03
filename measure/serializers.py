@@ -4,10 +4,12 @@ from .models import Juegos
 from .models import Prestamo
 
 class ClienteSerializer(serializers.ModelSerializer):
-    class MetaCliente:
+    class Meta:
         model = Cliente
         fields = ('idCliente', 'nombreCliente', 'direccion','telefono','celular','email')
-   
+ 
+
+
 class JuegosSerializer(serializers.ModelSerializer):
     class MetaJuegos:
         model = Juegos

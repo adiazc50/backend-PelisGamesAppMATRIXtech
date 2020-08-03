@@ -1,5 +1,4 @@
-"""backendPelisapp URL Configuration
-
+"""proyectointegrador1 URL Configuration
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
 Examples:
@@ -13,15 +12,35 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
+'''
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 from rest_framework import routers
-from report import views
+from measure import views
 
 router = routers.DefaultRouter()
-router.register(r'reports', views.ReportViewSet)
+router1 = routers.DefaultRouter()
+router2 = routers.DefaultRouter()
+
+router.register(r'cliente', views.ClienteViewSet)
+router1.register(r'prestamo', views.PrestamoViewSet)
+router2.register(r'juego', views.ClienteViewSet)
+
+urlpatterns = [
+    url(r'^', include(router.urls)),
+    url(r'^', include(router1.urls)),
+    url(r'^', include(router2.urls)),
+    path('admin/', admin.site.urls),
+]'''
+from django.contrib import admin
+from django.urls import path
+from django.conf.urls import url, include
+from rest_framework import routers
+from measure import views
+
+router = routers.DefaultRouter()
+router.register(r'measures', views.ClienteViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
